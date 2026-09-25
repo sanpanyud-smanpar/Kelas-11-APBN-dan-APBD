@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI Ekonomi Fase F - Kebijakan Fiskal, APBN & APBD: Pembelajaran Mendalam</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        naker: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-sky': '0 0 20px rgba(56, 189, 248, 0.4)',
+                        'glass': '0 8px 32px 0 rgba(2, 132, 199, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(186, 230, 253, 0.8);
+        }
+
+        .mascot-float {
+            animation: float 3.2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-7px) rotate(1.5deg); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e0f2fe; }
+        ::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0284c7; }
+
+        .tab-active {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 14px 0 rgba(2, 132, 199, 0.35);
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen selection:bg-naker-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 glass-panel border-b border-naker-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-3.5">
+                <div class="relative">
+                    <div class="w-11 h-11 bg-gradient-to-tr from-naker-600 via-naker-500 to-sky-400 rounded-2xl flex items-center justify-center text-white shadow-glow-sky transform rotate-2 hover:rotate-0 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-sky-500"></span>
+                    </span>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-base sm:text-lg font-black text-slate-900 tracking-tight">MPI Ekonomi Deep Learning</h1>
+                        <span class="bg-naker-100 text-naker-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase border border-naker-200">Kelas 11 / Fase F</span>
+                    </div>
+                    <p class="text-xs text-naker-600 font-semibold flex items-center gap-1">
+                        <span>🏛️ TP: APBN dan APBD (Kebijakan Fiskal)</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white border border-naker-200 px-3.5 py-1.5 rounded-xl shadow-sm">
+                <div class="w-8 h-8 rounded-lg bg-naker-100 text-naker-700 flex items-center justify-center font-bold text-xs">
+                    SPY
+                </div>
+                <div class="text-right text-xs">
+                    <span class="block font-bold text-slate-800">Sangaji Panji Yuda, SE.</span>
+                    <span class="text-[11px] text-naker-600 font-medium">SMAN 1 Parongpong</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
+
+        <nav class="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-naker-100/70 p-1.5 rounded-2xl border border-naker-200/80 shadow-inner">
+            <button onclick="switchTab('tahap1')" id="tab-tahap1" class="tab-btn tab-active py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2">
+                <span>🚀 1. Orientasi & Eksplorasi</span>
+            </button>
+            <button onclick="switchTab('tahap2')" id="tab-tahap2" class="tab-btn text-slate-600 hover:bg-white/70 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2">
+                <span>💡 2. Pendalaman Materi</span>
+            </button>
+            <button onclick="switchTab('tahap3')" id="tab-tahap3" class="tab-btn text-slate-600 hover:bg-white/70 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2">
+                <span>🎯 3. Kuis Evaluasi HOTS</span>
+            </button>
+            <button onclick="switchTab('tahap4')" id="tab-tahap4" class="tab-btn text-slate-600 hover:bg-white/70 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2">
+                <span>📊 4. Dashboard & Refleksi</span>
+            </button>
+        </nav>
+
+        <div id="mascot-container" class="glass-panel p-4 rounded-2xl flex items-center gap-4 sm:gap-6 border-l-4 border-l-naker-500 shadow-glass transition-all duration-300">
+            <div class="relative flex-shrink-0">
+                <div id="mascot-svg-wrapper" class="w-16 h-16 sm:w-20 sm:h-20 mascot-float cursor-pointer hover:scale-105 transition-transform" onclick="triggerMascotTrick()">
+                    <svg id="mascot-svg" viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+                        <defs>
+                            <linearGradient id="econBotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#0284c7" />
+                            </linearGradient>
+                            <linearGradient id="faceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0f172a" />
+                                <stop offset="100%" stop-color="#1e293b" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="45" y="12" width="30" height="10" rx="3" fill="#0284c7" stroke="#ffffff" stroke-width="1.5"/>
+                        <rect x="36" y="20" width="48" height="6" rx="2" fill="#0369a1"/>
+                        <rect x="24" y="26" width="72" height="72" rx="18" fill="url(#econBotGrad)" stroke="#ffffff" stroke-width="3"/>
+                        <rect x="18" y="48" width="8" height="18" rx="4" fill="#0284c7"/>
+                        <rect x="94" y="48" width="8" height="18" rx="4" fill="#0284c7"/>
+                        <rect x="32" y="34" width="56" height="40" rx="12" fill="url(#faceGrad)"/>
+                        <circle id="eye-left" cx="48" cy="50" r="5" fill="#38bdf8"/>
+                        <circle id="eye-right" cx="72" cy="50" r="5" fill="#38bdf8"/>
+                        <circle cx="49" cy="48" r="1.8" fill="#ffffff"/>
+                        <circle cx="73" cy="48" r="1.8" fill="#ffffff"/>
+                        <path id="mascot-mouth" d="M 48 62 Q 60 69 72 62" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+                        <circle id="mascot-light" cx="60" cy="104" r="4" fill="#10b981" class="animate-pulse"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex-grow">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="font-bold text-sm text-slate-900 flex items-center gap-1">
+                        <span>EconBot Mentor</span>
+                    </span>
+                    <span class="text-[10px] bg-naker-100 text-naker-800 font-bold px-2 py-0.5 rounded-md border border-naker-200">Asisten Kebijakan Fiskal & APBN/APBD</span>
+                </div>
+                <p id="mascot-dialog" class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                    "Halo ekonom muda! Bagaimana negara mengelola pendapatan dari pajak dan membelanjakannya untuk kesejahteraan rakyat? Mari kita bedah APBN dan APBD!"
+                </p>
+            </div>
+        </div>
+
+        <section id="content-tahap1" class="tab-content flex flex-col gap-6">
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl shadow-glass border border-naker-200">
+                
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-gradient-to-r from-naker-600 to-sky-500 text-white font-black px-3.5 py-1.5 rounded-xl text-xs tracking-wider uppercase shadow-md">
+                        Tahap 1
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Orientasi Konteks & Eksplorasi Awal: Mengapa Negara Butuh APBN?</h2>
+                </div>
+
+                <div class="bg-gradient-to-br from-white via-naker-50/60 to-sky-50/40 p-6 rounded-2xl border border-naker-200/80 mb-6 shadow-sm">
+                    <div class="flex items-center gap-2 mb-3 text-naker-700 font-bold text-base">
+                        <svg class="w-5 h-5 text-naker-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Keterkaitan Antara Anggaran Negara dan Kesejahteraan Masyarakat</span>
+                    </div>
+                    
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed text-justify mb-3">
+                        Setiap tahun pemerintah menyusun Anggaran Pendapatan dan Belanja Negara (APBN) serta Anggaran Pendapatan dan Belanja Daerah (APBD). Dari mana asal uang yang digunakan untuk membangun jalan tol, membayar gaji guru, memberikan subsidi listrik, hingga membangun fasilitas kesehatan di daerah?
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed text-justify mb-4">
+                        Melalui instrumen <strong>Kebijakan Fiskal</strong>, pemerintah mengatur besar kecilnya pajak dan pengeluaran negara guna menjaga stabilitas ekonomi dan mendorong pemerataan keadilan sosial.
+                    </p>
+
+                    <div class="bg-naker-100/80 p-3.5 rounded-xl border border-naker-300 text-xs text-naker-900 font-medium flex items-start gap-2.5">
+                        <span class="text-base">💭</span>
+                        <div>
+                            <strong>Refleksi Deep Learning:</strong> Bagaimana jika suatu negara tidak memiliki anggaran belanja publik yang terencana? Apa dampaknya bagi sektor pendidikan dan infrastruktur?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 sm:p-6 rounded-2xl border border-naker-300 shadow-sm">
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <h3 class="font-bold text-sm sm:text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-3 h-3 bg-naker-500 rounded-full animate-ping"></span>
+                            <span>Interaksi Eksplorasi Awal: Fungsi Utama Anggaran Negara</span>
+                        </h3>
+                        <span class="text-[11px] bg-naker-100 text-naker-700 font-bold px-2 py-0.5 rounded-full">Kritis & Analitis</span>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                        <strong>a. Instruksi:</strong> Ketika perekonomian global mengalami krisis dan daya beli masyarakat menurun drastis, pemerintah memutuskan untuk memperbesar belanja subsidi dan bantuan sosial melalui APBN. Kebijakan ini mencerminkan fungsi anggaran negara sebagai...
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                        <button onclick="checkEksplorasi(1)" class="exp-btn text-left p-4 rounded-xl border-2 border-naker-200 hover:border-naker-500 bg-naker-50/40 hover:bg-naker-50 transition-all text-xs sm:text-sm">
+                            <span class="font-bold text-naker-800 block mb-1">Opsi A: Fungsi Distribusi & Stabilisasi</span>
+                            Menggunakan anggaran untuk memperbaiki pemerataan pendapatan dan menstabilkan perekonomian masyarakat saat krisis.
+                        </button>
+                        <button onclick="checkEksplorasi(2)" class="exp-btn text-left p-4 rounded-xl border-2 border-naker-200 hover:border-naker-500 bg-naker-50/40 hover:bg-naker-50 transition-all text-xs sm:text-sm">
+                            <span class="font-bold text-naker-800 block mb-1">Opsi B: Fungsi Otorisasi Murni semata</span>
+                            Hanya sekadar memberikan izin hukum bagi lembaga penegak hukum untuk menjalankan tugas administratif rutin.
+                        </button>
+                    </div>
+
+                    <div id="feedback-eksplorasi" class="hidden p-4 rounded-xl text-xs sm:text-sm leading-relaxed transition-all"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="content-tahap2" class="tab-content hidden flex flex-col gap-6">
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl shadow-glass border border-naker-200">
+                
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-gradient-to-r from-naker-600 to-sky-500 text-white font-black px-3.5 py-1.5 rounded-xl text-xs tracking-wider uppercase shadow-md">
+                        Tahap 2
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Pendalaman Materi: APBN, APBD, dan Kebijakan Fiskal</h2>
+                </div>
+
+                <!-- SUB MATERI 1: STRUKTUR APBN & APBD -->
+                <div class="bg-white border border-naker-200 p-5 sm:p-6 rounded-2xl mb-6 shadow-sm">
+                    <h3 class="font-bold text-base sm:text-lg text-naker-900 mb-3 border-b border-naker-100 pb-2.5 flex items-center gap-2">
+                        <span class="bg-naker-100 text-naker-700 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black">1</span>
+                        Struktur & Sumber Pendapatan serta Belanja Negara (APBN) vs Daerah (APBD)
+                    </h3>
+                    
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4 text-justify">
+                        APBN dan APBD disusun setiap tahun dengan struktur utama yang terdiri dari Pendapatan Negara/Daerah (Pajak, Penerimaan Bukan Pajak/Retribusi, Hibah), Belanja Negara/Daerah (Belanja Pegawai, Barang, Modal, Subsidi), serta Pembiayaan Anggaran (Defisit/Surplus).
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 text-xs">
+                        <div class="bg-naker-50/80 p-3.5 rounded-xl border border-naker-200">
+                            <div class="font-bold text-naker-800 mb-1">🏛️ APBN (Anggaran Pusat)</div>
+                            <p class="text-slate-600">Dikelola oleh Pemerintah Pusat dan DPR untuk kepentingan nasional (pertahanan, infrastruktur strategis, subsidi nasional, transfer ke daerah).</p>
+                        </div>
+                        <div class="bg-naker-50/80 p-3.5 rounded-xl border border-naker-200">
+                            <div class="font-bold text-naker-800 mb-1">🏡 APBD (Anggaran Daerah - Provinsi/Kabupaten/Kota)</div>
+                            <p class="text-slate-600">Dikelola oleh Pemda bersama DPRD untuk pelayanan publik lokal (pembangunan jalan kabupaten, sekolah negeri daerah, puskesmas).</p>
+                        </div>
+                    </div>
+
+                    <!-- MANDATORY INTERACTION 1 -->
+                    <div class="bg-gradient-to-r from-naker-50 to-sky-50 border border-naker-300 p-4 sm:p-5 rounded-xl">
+                        <div class="mb-3">
+                            <span class="text-[10px] font-black bg-naker-600 text-white px-2.5 py-1 rounded-md uppercase">Interaksi Wajib 1</span>
+                            <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-1">Klasifikasi Pos Penerimaan & Belanja (APBN vs APBD)</h4>
+                        </div>
+                        
+                        <p class="text-xs text-slate-600 mb-3"><strong>a. Instruksi:</strong> Jodohkan jenis penerimaan/pengeluaran di bawah ini apakah bersumber dari APBN atau APBD!</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3 text-xs">
+                            <div class="bg-white p-3 rounded-xl border border-naker-200">
+                                <label class="font-semibold text-slate-800 block mb-1">1. Retribusi Parkir Kendaraan Bermotor di Kota Bandung & Pajak Kendaraan Bermotor.</label>
+                                <select id="int1-select1" class="w-full mt-1 border border-naker-300 rounded-lg p-2 text-xs bg-naker-50/50 focus:outline-none focus:ring-2 focus:ring-naker-500">
+                                    <option value="">-- Pilih Sumber Anggaran --</option>
+                                    <option value="apbn">APBN (Pusat)</option>
+                                    <option value="apbd">APBD (Daerah)</option>
+                                </select>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-naker-200">
+                                <label class="font-semibold text-slate-800 block mb-1">2. Anggaran Pertahanan Nasional, Pembelian Alutsista TNI, & Gaji Guru PNS Pusat.</label>
+                                <select id="int1-select2" class="w-full mt-1 border border-naker-300 rounded-lg p-2 text-xs bg-naker-50/50 focus:outline-none focus:ring-2 focus:ring-naker-500">
+                                    <option value="">-- Pilih Sumber Anggaran --</option>
+                                    <option value="apbn">APBN (Pusat)</option>
+                                    <option value="apbd">APBD (Daerah)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button onclick="verifyInteraksi1()" class="bg-naker-600 hover:bg-naker-700 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all shadow-md">
+                            Periksa Jawaban Interaksi 1
+                        </button>
+                        
+                        <div id="int1-feedback" class="hidden mt-3 p-3 rounded-xl text-xs leading-relaxed"></div>
+                    </div>
+                </div>
+
+                <!-- SUB MATERI 2: JENIS KEBIJAKAN FISKAL (EKSPANSIF VS KONTRAKTIF) -->
+                <div class="bg-white border border-naker-200 p-5 sm:p-6 rounded-2xl mb-6 shadow-sm">
+                    <h3 class="font-bold text-base sm:text-lg text-naker-900 mb-3 border-b border-naker-100 pb-2.5 flex items-center gap-2">
+                        <span class="bg-naker-100 text-naker-700 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black">2</span>
+                        Kebijakan Fiskal: Ekspansif & Kontraktif
+                    </h3>
+
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4 text-justify">
+                        Kebijakan fiskal adalah kebijakan pemerintah dalam mengatur pengeluaran dan perpajakan untuk mempengaruhi jalannya perekonomian negara.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-xs">
+                        <div class="bg-naker-50/80 p-3.5 rounded-xl border border-naker-200">
+                            <div class="font-bold text-naker-800 mb-1">🚀 Kebijakan Fiskal Ekspansif</div>
+                            <p class="text-slate-600">Dilakukan dengan menambah belanja negara atau menurunkan tarif pajak saat ekonomi lesu (resesi) agar daya beli meningkat.</p>
+                        </div>
+                        <div class="bg-naker-50/80 p-3.5 rounded-xl border border-naker-200">
+                            <div class="font-bold text-naker-800 mb-1">⚓ Kebijakan Fiskal Kontraktif</div>
+                            <p class="text-slate-600">Dilakukan dengan mengurangi belanja negara atau menaikkan tarif pajak saat terjadi inflasi tinggi agar peredaran uang mengerem.</p>
+                        </div>
+                    </div>
+
+                    <!-- MANDATORY INTERACTION 2 -->
+                    <div class="bg-gradient-to-r from-naker-50 to-sky-50 border border-naker-300 p-4 sm:p-5 rounded-xl">
+                        <div class="mb-3">
+                            <span class="text-[10px] font-black bg-naker-600 text-white px-2.5 py-1 rounded-md uppercase">Interaksi Wajib 2</span>
+                            <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-1">Mengurutkan Langkah Penanganan Krisis Ekonomi</h4>
+                        </div>
+                        
+                        <p class="text-xs text-slate-600 mb-3"><strong>a. Instruksi:</strong> Susun urutan mekanisme kebijakan fiskal ekspansif yang tepat saat negara mengalami kelesuan ekonomi (Urutan 1 sampai 4).</p>
+
+                        <div id="policy-container" class="space-y-2 mb-3 text-xs">
+                            <div class="policy-item bg-white p-2.5 rounded-xl border border-naker-300 flex items-center justify-between" data-id="2">
+                                <span>🏗️ Pemerintah memutuskan memperbanyak proyek infrastruktur padat karya dan subsidi</span>
+                                <div class="flex gap-1">
+                                    <button onclick="movePolicyItem(this, -1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▲</button>
+                                    <button onclick="movePolicyItem(this, 1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▼</button>
+                                </div>
+                            </div>
+                            <div class="policy-item bg-white p-2.5 rounded-xl border border-naker-300 flex items-center justify-between" data-id="1">
+                                <span>📉 Pemerintah mendeteksi penurunan tajam pertumbuhan PDB dan kenaikan pengangguran</span>
+                                <div class="flex gap-1">
+                                    <button onclick="movePolicyItem(this, -1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▲</button>
+                                    <button onclick="movePolicyItem(this, 1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▼</button>
+                                </div>
+                            </div>
+                            <div class="policy-item bg-white p-2.5 rounded-xl border border-naker-300 flex items-center justify-between" data-id="4">
+                                <span>📈 Roda perekonomian kembali bergairah, daya beli pulih, dan pengangguran menyusut</span>
+                                <div class="flex gap-1">
+                                    <button onclick="movePolicyItem(this, -1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▲</button>
+                                    <button onclick="movePolicyItem(this, 1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▼</button>
+                                </div>
+                            </div>
+                            <div class="policy-item bg-white p-2.5 rounded-xl border border-naker-300 flex items-center justify-between" data-id="3">
+                                <span>💵 Daya beli masyarakat meningkat melalui kucuran dana bantuan dan penciptaan lapangan kerja</span>
+                                <div class="flex gap-1">
+                                    <button onclick="movePolicyItem(this, -1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▲</button>
+                                    <button onclick="movePolicyItem(this, 1)" class="px-2 py-1 bg-naker-100 hover:bg-naker-200 rounded-lg text-naker-800 font-bold">▼</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="verifyInteraksi2()" class="bg-naker-600 hover:bg-naker-700 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all shadow-md">
+                            Validasi Urutan Langkah Kebijakan
+                        </button>
+                        
+                        <div id="int2-feedback" class="hidden mt-3 p-3 rounded-xl text-xs leading-relaxed"></div>
+                    </div>
+                </div>
+
+                <!-- SUB MATERI 3: PERPAJAKAN SEBAGAI SUMBER UTAMA -->
+                <div class="bg-white border border-naker-200 p-5 sm:p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-base sm:text-lg text-naker-900 mb-3 border-b border-naker-100 pb-2.5 flex items-center gap-2">
+                        <span class="bg-naker-100 text-naker-700 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black">3</span>
+                        Perpajakan: Tulang Punggung APBN
+                    </h3>
+
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4 text-justify">
+                        Lebih dari 70% penerimaan dalam APBN berasal dari sektor perpajakan (Pajak Penghasilan/PPh, Pajak Pertambahan Nilai/PPN, Bea Masuk, dan Cukai). Pajak memiliki fungsi budgeter (pemasukan kas negara) dan fungsi reguler (pengatur kegiatan ekonomi).
+                    </p>
+
+                    <!-- MANDATORY INTERACTION 3 -->
+                    <div class="bg-gradient-to-r from-naker-50 to-sky-50 border border-naker-300 p-4 sm:p-5 rounded-xl">
+                        <div class="mb-3">
+                            <span class="text-[10px] font-black bg-naker-600 text-white px-2.5 py-1 rounded-md uppercase">Interaksi Wajib 3</span>
+                            <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-1">Studi Kasus Analisis Kebijakan Pajak</h4>
+                        </div>
+                        
+                        <p class="text-xs text-slate-600 mb-3">
+                            <strong>a. Instruksi:</strong> Pemerintah menaikkan tarif cukai atas produk hasil tembakau (rokok) secara signifikan. Apa tujuan utama dari sisi ekonomi dan sosial?
+                        </p>
+
+                        <div class="space-y-2 mb-3 text-xs">
+                            <button onclick="verifyInteraksi3('A')" class="w-full text-left p-3 rounded-xl bg-white border border-naker-200 hover:border-naker-500 font-medium transition-all">
+                                A. Menjalankan fungsi reguler pajak untuk mengendalikan tingkat konsumsi barang yang berdampak negatif bagi kesehatan sekaligus menambah pemasukan negara.
+                            </button>
+                            <button onclick="verifyInteraksi3('B')" class="w-full text-left p-3 rounded-xl bg-white border border-naker-200 hover:border-naker-500 font-medium transition-all">
+                                B. Memaksa seluruh warga negara untuk berhenti bekerja di sektor perkebunan tembakau secara total.
+                            </button>
+                        </div>
+
+                        <div id="int3-feedback" class="hidden p-3 rounded-xl text-xs leading-relaxed"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="content-tahap3" class="tab-content hidden flex flex-col gap-6">
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl shadow-glass border border-naker-200">
+                
+                <div class="flex items-center justify-between flex-wrap gap-3 mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-gradient-to-r from-naker-600 to-sky-500 text-white font-black px-3.5 py-1.5 rounded-xl text-xs tracking-wider uppercase shadow-md">
+                            Tahap 3
+                        </span>
+                        <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Kuis Evaluasi HOTS APBN, APBD & Pajak (10 Soal)</h2>
+                    </div>
+                    <div class="bg-naker-100 border border-naker-300 text-naker-900 px-4 py-1.5 rounded-xl text-xs font-black flex items-center gap-1.5">
+                        <span>🏆 Skor Sementara:</span>
+                        <span id="current-score-display" class="text-sm font-black text-naker-600">0</span>
+                        <span>/ 100</span>
+                    </div>
+                </div>
+
+                <div class="w-full bg-naker-100 rounded-full h-3 mb-6 overflow-hidden border border-naker-200 p-0.5">
+                    <div id="quiz-progress-bar" class="bg-gradient-to-r from-naker-500 via-sky-400 to-naker-600 h-full rounded-full transition-all duration-300" style="width: 10%"></div>
+                </div>
+
+                <div id="quiz-container" class="bg-white border border-naker-200 p-5 sm:p-7 rounded-2xl shadow-sm"></div>
+
+                <div class="flex justify-between items-center mt-6">
+                    <button id="btn-prev-q" onclick="navigateQuiz(-1)" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all disabled:opacity-40">
+                        ← Soal Sebelumnya
+                    </button>
+                    <span id="quiz-question-number" class="text-xs font-black text-naker-700 bg-naker-50 px-3 py-1 rounded-lg border border-naker-200">
+                        Soal 1 dari 10
+                    </span>
+                    <button id="btn-next-q" onclick="navigateQuiz(1)" class="bg-gradient-to-r from-naker-600 to-sky-500 hover:from-naker-700 hover:to-sky-600 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-md">
+                        Soal Berikutnya →
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="content-tahap4" class="tab-content hidden flex flex-col gap-6">
+            <div class="glass-panel p-6 sm:p-10 rounded-3xl shadow-glass border border-naker-200 text-center">
+                <div class="max-w-xl mx-auto">
+                    
+                    <div class="inline-flex p-4 bg-naker-100 rounded-3xl mb-4 text-naker-600 shadow-inner">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-1">
+                        Dashboard Capaian Pembelajaran
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mb-6">
+                        Laporan Evaluasi Deep Learning TP: APBN dan APBD
+                    </p>
+
+                    <div class="relative w-40 h-40 mx-auto mb-6 flex items-center justify-center bg-gradient-to-tr from-naker-600 via-naker-500 to-sky-400 rounded-full text-white shadow-glow-sky border-4 border-white">
+                        <div>
+                            <span id="final-score" class="text-5xl font-black tracking-tight">0</span>
+                            <span class="text-xs block font-bold opacity-80 uppercase tracking-widest mt-1">Skor Akhir</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-6 text-left">
+                        <div class="bg-emerald-50/90 p-4 rounded-2xl border border-emerald-200 shadow-sm">
+                            <span class="text-xs text-emerald-700 font-bold block mb-1">Jawaban Benar</span>
+                            <span id="correct-count" class="text-xl font-black text-emerald-800">0 Soal</span>
+                        </div>
+                        <div class="bg-rose-50/90 p-4 rounded-2xl border border-rose-200 shadow-sm">
+                            <span class="text-xs text-rose-700 font-bold block mb-1">Salah / Belum Dijawab</span>
+                            <span id="wrong-count" class="text-xl font-black text-rose-800">0 Soal</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-naker-200 text-left text-xs mb-6 space-y-2.5 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-sm border-b border-naker-100 pb-2">
+                            Analisis Capaian Berdasarkan Variasi Soal:
+                        </h4>
+                        <div class="flex justify-between items-center"><span class="text-slate-600">Pilihan Ganda (PG):</span><span id="type-pg" class="font-bold text-naker-700">0 / 4</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-600">Pilihan Ganda Kompleks (PGK):</span><span id="type-pgk" class="font-bold text-naker-700">0 / 2</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-600">Benar / Salah (BS):</span><span id="type-bs" class="font-bold text-naker-700">0 / 3</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-600">Urutkan / Matching:</span><span id="type-drag" class="font-bold text-naker-700">0 / 1</span></div>
+                    </div>
+
+                    <div id="reflective-box" class="p-5 rounded-2xl text-xs sm:text-sm text-left leading-relaxed mb-6 border"></div>
+
+                    <button onclick="restartQuiz()" class="w-full bg-gradient-to-r from-naker-600 to-sky-500 hover:from-naker-700 hover:to-sky-600 text-white font-extrabold py-3.5 rounded-2xl text-sm transition-all shadow-lg hover:shadow-xl">
+                        🔄 Ulangi Evaluasi / Belajar Lagi
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <canvas id="confetti-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></canvas>
+
+    </main>
+
+    <footer class="bg-white/80 border-t border-naker-200 mt-auto py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Media Pembelajaran Digital Ekonomi • Sangaji Panji Yuda, SE. (SMAN 1 Parongpong)</p>
+    </footer>
+
+    <script>
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playSound(type) {
+            try {
+                initAudio();
+                if (!audioCtx) return;
+
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                const now = audioCtx.currentTime;
+
+                if (type === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, now);
+                    osc.frequency.setValueAtTime(659.25, now + 0.08);
+                    osc.frequency.setValueAtTime(783.99, now + 0.16);
+                    gain.gain.setValueAtTime(0.25, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.45);
+                    osc.start(now);
+                    osc.stop(now + 0.45);
+                } else if (type === 'wrong') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, now);
+                    osc.frequency.setValueAtTime(174.61, now + 0.12);
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+                    osc.start(now);
+                    osc.stop(now + 0.4);
+                } else if (type === 'finish') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, now);
+                    osc.frequency.setValueAtTime(659.25, now + 0.12);
+                    osc.frequency.setValueAtTime(783.99, now + 0.24);
+                    osc.frequency.setValueAtTime(1046.50, now + 0.36);
+                    gain.gain.setValueAtTime(0.3, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.7);
+                    osc.start(now);
+                    osc.stop(now + 0.7);
+                }
+            } catch (e) {
+                console.log("Audio context muted or user interaction required.");
+            }
+        }
+
+        function setMascotState(state, message) {
+            const mouth = document.getElementById('mascot-mouth');
+            const light = document.getElementById('mascot-light');
+            const dialog = document.getElementById('mascot-dialog');
+
+            if (message) dialog.innerText = message;
+
+            if (state === 'happy') {
+                mouth.setAttribute('d', 'M 44 58 Q 60 72 76 58');
+                light.setAttribute('fill', '#10b981');
+                playSound('correct');
+            } else if (state === 'sad') {
+                mouth.setAttribute('d', 'M 46 68 Q 60 56 74 68');
+                light.setAttribute('fill', '#ef4444');
+                playSound('wrong');
+            } else if (state === 'thinking') {
+                mouth.setAttribute('d', 'M 46 62 L 74 62');
+                light.setAttribute('fill', '#f59e0b');
+            } else {
+                mouth.setAttribute('d', 'M 48 62 Q 60 69 72 62');
+                light.setAttribute('fill', '#38bdf8');
+            }
+        }
+
+        function triggerMascotTrick() {
+            setMascotState('happy', '💡 "Tahukah kamu? Pajak yang dibayarkan masyarakat langsung dikelola pemerintah melalui APBN untuk membiayai fasilitas publik seperti sekolah dan jalan raya!"');
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-slate-600');
+            });
+
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.add('tab-active');
+            activeBtn.classList.remove('text-slate-600');
+
+            if (tabId === 'tahap4') {
+                calculateFinalDashboard();
+            }
+        }
+
+        function checkEksplorasi(option) {
+            const fb = document.getElementById('feedback-eksplorasi');
+            fb.classList.remove('hidden', 'bg-rose-50', 'bg-emerald-50', 'text-rose-900', 'text-emerald-900', 'border-rose-300', 'border-emerald-300');
+
+            if (option === 1) {
+                fb.classList.add('bg-emerald-50', 'text-emerald-900', 'border', 'border-emerald-300');
+                fb.innerHTML = `
+                    <strong>✅ Tepat Sekali! (Analisis Kritis Sempurna)</strong><br>
+                    <strong>Penjelasan Konseptual:</strong> Ketika krisis, pengeluaran belanja pemerintah (subsidi/bansos) berfungsi mendistribusikan keadilan serta menstabilkan daya beli masyarakat.
+                `;
+                setMascotState('happy', 'Analisis awal kamu luar biasa! Mari pelajari struktur APBN dan APBD lebih dalam.');
+            } else {
+                fb.classList.add('bg-rose-50', 'text-rose-900', 'border', 'border-rose-300');
+                fb.innerHTML = `
+                    <strong>❌ Kurang Tepat.</strong><br>
+                    <strong>Penjelasan Konseptual:</strong> Anggaran negara memiliki fungsi alokasi, distribusi, dan stabilisasi yang sangat krusial bagi kesejahteraan sosial.
+                `;
+                setMascotState('sad', 'Ingat kembali bahwa anggaran belanja negara aktif menggerakkan distribusi kesejahteraan saat krisis.');
+            }
+        }
+
+        function verifyInteraksi1() {
+            const v1 = document.getElementById('int1-select1').value;
+            const v2 = document.getElementById('int1-select2').value;
+            const fb = document.getElementById('int1-feedback');
+
+            fb.classList.remove('hidden', 'bg-emerald-50', 'bg-rose-50', 'text-emerald-900', 'text-rose-900');
+
+            if (v1 === 'apbd' && v2 === 'apbn') {
+                fb.classList.add('bg-emerald-50', 'text-emerald-900', 'border', 'border-emerald-300');
+                fb.innerHTML = `
+                    <strong>🎉 Benar! (Penjodohan Sempurna)</strong><br>
+                    <strong>Penjelasan Konseptual:</strong> Retribusi daerah dikelola dalam APBD oleh Pemda, sedangkan pertahanan dan gaji PNS pusat dikelola dalam APBN oleh Pemerintah Pusat.
+                `;
+                setMascotState('happy', 'Sempurna! Kamu memahami pemetaan APBN dan APBD dengan sangat baik.');
+            } else {
+                fb.classList.add('bg-rose-50', 'text-rose-900', 'border', 'border-rose-300');
+                fb.innerHTML = `
+                    <strong>⚠️ Belum Tepat.</strong><br>
+                    <strong>Penjelasan:</strong> Cermati kembali kewenangan pengelolaan fiskal pusat (APBN) versus daerah (APBD).
+                `;
+                setMascotState('sad', 'Ayo cermati kembali pasangan pos pendapatan dan belanjanya.');
+            }
+        }
+
+        function movePolicyItem(btn, direction) {
+            const item = btn.closest('.policy-item');
+            const container = document.getElementById('policy-container');
+            if (direction === -1 && item.previousElementSibling) {
+                container.insertBefore(item, item.previousElementSibling);
+            } else if (direction === 1 && item.nextElementSibling) {
+                container.insertBefore(item.nextElementSibling, item);
+            }
+        }
+
+        function verifyInteraksi2() {
+            const items = document.querySelectorAll('.policy-item');
+            const currentOrder = Array.from(items).map(el => parseInt(el.getAttribute('data-id')));
+            const correctOrder = [1, 2, 3, 4];
+            const isCorrect = JSON.stringify(currentOrder) === JSON.stringify(correctOrder);
+
+            const fb = document.getElementById('int2-feedback');
+            fb.classList.remove('hidden', 'bg-emerald-50', 'bg-rose-50', 'text-emerald-900', 'text-rose-900');
+
+            if (isCorrect) {
+                fb.classList.add('bg-emerald-50', 'text-emerald-900', 'border', 'border-emerald-300');
+                fb.innerHTML = `
+                    <strong>🚀 Sempurna! Urutan Transmisi Kebijakan Tepat:</strong><br>
+                    Deteksi Krisis → Perluasan Belanja Negara → Peningkatan Daya Beli → Pemulihan Ekonomi.
+                `;
+                setMascotState('happy', 'Luar biasa! Urutan mekanisme kebijakan fiskal ekspansif sudah sangat akurat.');
+            } else {
+                fb.classList.add('bg-rose-50', 'text-rose-900', 'border', 'border-rose-300');
+                fb.innerHTML = `
+                    <strong>❌ Urutan Belum Tepat.</strong><br>
+                    <strong>Petunjuk:</strong> Mulai dari deteksi kelesuan, ekspansi belanja pemerintah, peningkatan daya beli, hingga pemulihan ekonomi.
+                `;
+                setMascotState('thinking', 'Susun dari awal deteksi masalah hingga dampak pemulihan akhirnya.');
+            }
+        }
+
+        function verifyInteraksi3(choice) {
+            const fb = document.getElementById('int3-feedback');
+            fb.classList.remove('hidden', 'bg-emerald-50', 'bg-rose-50', 'text-emerald-900', 'text-rose-900');
+
+            if (choice === 'A') {
+                fb.classList.add('bg-emerald-50', 'text-emerald-900', 'border', 'border-emerald-300');
+                fb.innerHTML = `
+                    <strong>✅ Analisis Tepat!</strong><br>
+                    <strong>Penjelasan Konseptual:</strong> Pajak/cukai memiliki fungsi reguler (pengatur) di samping fungsi budgeter, yakni untuk mengendalikan konsumsi produk yang berbahaya bagi kesehatan.
+                `;
+                setMascotState('happy', 'Analisis fungsi perpajakan sangat tajam dan tepat sasaran!');
+            } else {
+                fb.classList.add('bg-rose-50', 'text-rose-900', 'border', 'border-rose-300');
+                fb.innerHTML = `
+                    <strong>❌ Analisis Kurang Tepat.</strong><br>
+                    <strong>Penjelasan:</strong> Kebijakan cukai tidak bertujuan menghentikan sektor usaha secara total, melainkan mengatur tingkat konsumsi masyarakat.
+                `;
+                setMascotState('sad', 'Ingat bahwa fungsi reguler pajak adalah mengarahkan perilaku ekonomi, bukan mematikan sektor kerja.');
+            }
+        }
+
+        const quizData = [
+            {
+                id: 1,
+                type: 'pg',
+                question: "Pemerintah pusat menyusun APBN dengan defisit anggaran yang dibiayai melalui penerbitan Surat Berharga Negara (SBN). Apa tujuan utama penerapan anggaran defisit terencana dalam makroekonomi?",
+                options: [
+                    "Memberikan stimulus fiskal untuk menggerakkan sektor riil saat perekonomian mengalami kelesuan.",
+                    "Menghilangkan seluruh utang luar negeri negara secara instan.",
+                    "Memastikan tidak ada pajak yang ditarik dari masyarakat sama sekali.",
+                    "Menaikkan inflasi tahunan hingga dua digit agar tabungan warga bernilai tinggi."
+                ],
+                correct: 0,
+                explanation: "Anggaran defisit (di mana belanja melebihi pendapatan) digunakan sebagai instrumen ekspansif untuk menyuntikkan likuiditas dan stimulus ke dalam perekonomian."
+            },
+            {
+                id: 2,
+                type: 'bs',
+                question: "Pernyataan HOTS: 'Pajak Pertambahan Nilai (PPN) yang dipungut atas transaksi jual beli barang dan jasa di dalam negeri merupakan salah satu sumber Pendapatan Dalam Negeri dalam APBN.'",
+                options: ["BENAR", "SALAH"],
+                correct: 0,
+                explanation: "BENAR. PPN adalah pajak pusat yang menjadi kontributor utama Pendapatan Negara dari sektor perpajakan dalam struktur APBN."
+            },
+            {
+                id: 3,
+                type: 'pgk',
+                question: "Manakah yang termasuk ke dalam kelompok Belanja Pemerintah Pusat dalam struktur APBN? (Pilih semua yang tepat)",
+                options: [
+                    "Belanja Pegawai (Gaji dan Tunjangan PNS Pusat)",
+                    "Subsidi Energi dan Pupuk",
+                    "Dana Alokasi Umum (DAU) ke Kabupaten/Kota",
+                    "Pengeluaran Pembangunan Infrastruktur Strategis Nasional"
+                ],
+                correct: [0, 1, 3],
+                explanation: "DAU dan DBH termasuk Transfer ke Daerah, sedangkan pegawai pusat, subsidi, dan infrastruktur nasional masuk dalam Belanja Pemerintah Pusat."
+            },
+            {
+                id: 4,
+                type: 'drag',
+                question: "Urutkan tahapan siklus penyusunan dan pengesahan APBN di Indonesia dari awal hingga pelaksanaan!",
+                items: [
+                    "1. Pemerintah menyusun Rancangan Undang-Undang (RUU) APBN",
+                    "2. Pembahasan RAPBN bersama Dewan Perwakilan Rakyat (DPR)",
+                    "3. Pengesahan UU APBN oleh DPR dan Presiden",
+                    "4. Pelaksanaan dan pertanggungjawaban APBN oleh pemerintah"
+                ],
+                correctOrder: [0, 1, 2, 3],
+                explanation: "Siklus APBN bermula dari penyusunan RAPBN oleh eksekutif, dibahas bersama legislatif, disahkan menjadi UU APBN, lalu dieksekusi dan diaudit."
+            },
+            {
+                id: 5,
+                type: 'pg',
+                question: "Jika pemerintah daerah mengalami surplus APBD di akhir tahun anggaran akibat tingginya pendapatan asli daerah (PAD) dan belum terserapnya belanja, tindakan manakah yang lazim dilakukan pada tahun anggaran berikutnya?",
+                options: [
+                    "Menggunakan Sisa Lebih Pembiayaan Anggaran (SiLPA) untuk mempercepat pembangunan fasilitas publik.",
+                    "Membagikan seluruh surplus tunai kepada seluruh warga kota secara merata.",
+                    "Menghapuskan seluruh pungutan retribusi daerah selamanya.",
+                    "Menyerahkan seluruh surplus kas daerah kepada bank swasta luar negeri."
+                ],
+                correct: 0,
+                explanation: "SiLPA (Sisa Lebih Pembiayaan Anggaran) dari tahun sebelumnya dapat digunakan kembali untuk membiayai program pembangunan di tahun anggaran berikutnya."
+            },
+            {
+                id: 6,
+                type: 'pgk',
+                question: "Apa sajakah fungsi utama pajak dalam perekonomian nasional? (Pilih semua yang tepat)",
+                options: [
+                    "Fungsi Budgeter (Sumber penerimaan kas negara)",
+                    "Fungsi Reguler (Alat pengatur kegiatan ekonomi)",
+                    "Fungsi Spekulatif (Mencari keuntungan bursa saham)",
+                    "Fungsi Redistribusi Pendapatan (Pemerataan kesejahteraan)"
+                ],
+                correct: [0, 1, 3],
+                explanation: "Pajak memiliki 4 fungsi utama: budgeter, reguler, stabilitas, dan redistribusi pendapatan. Fungsi spekulatif tidak ada."
+            },
+            {
+                id: 7,
+                type: 'bs',
+                question: "Pernyataan HOTS: 'Kebijakan fiskal kontraktif (menaikkan pajak dan mengurangi pengeluaran) sangat tepat diterapkan saat perekonomian mengalami inflasi yang tidak terkendali.'",
+                options: ["BENAR", "SALAH"],
+                correct: 0,
+                explanation: "BENAR. Kebijakan fiskal kontraktif mengurangi jumlah uang beredar di masyarakat dengan mengerem belanja negara dan menaikkan pajak untuk meredam inflasi."
+            },
+            {
+                id: 8,
+                type: 'pg',
+                question: "Manakah di bawah ini yang merupakan contoh Pendapatan Asli Daerah (PAD) dalam struktur APBD?",
+                options: [
+                    "Pajak Hotel, Pajak Restoran, dan Retribusi Parkir",
+                    "Penerimaan Bea Masuk dan Cukai tembakau nasional",
+                    "Pinjaman luar negeri dari Bank Dunia untuk proyek nasional",
+                    "Bantuan pendanaan darurat dari markas besar TNI"
+                ],
+                correct: 0,
+                explanation: "PAD bersumber dari pajak daerah, retribusi daerah, hasil pengelolaan kekayaan daerah yang dipisahkan, dan lain-lain pendapatan asli daerah yang sah."
+            },
+            {
+                id: 9,
+                type: 'bs',
+                question: "Pernyataan HOTS: 'Dana Alokasi Khusus (DAK) adalah dana yang bersumber dari APBN yang dialokasikan kepada daerah tertentu dengan tujuan untuk membantu mendanai kegiatan khusus yang merupakan urusan daerah.'",
+                options: ["BENAR", "SALAH"],
+                correct: 0,
+                explanation: "BENAR. DAK merupakan bagian dari Transfer ke Daerah dalam APBN yang dikhususkan untuk membiayai prioritas nasional di daerah."
+            },
+            {
+                id: 10,
+                type: 'pg',
+                question: "Mengapa keterbukaan dan transparansi dalam pengelolaan APBN dan APBD sangat penting bagi masyarakat demokratis?",
+                options: [
+                    "Agar warga negara dapat mengawasi penggunaan uang rakyat secara akuntabel dan mencegah praktik korupsi.",
+                    "Agar pemerintah bebas menaikkan tarif pajak tanpa persetujuan siapapun.",
+                    "Agar rahasia perusahaan swasta dapat disebarluaskan ke publik.",
+                    "Agar nilai tukar rupiah terhadap dolar dapat dipatok secara tetap."
+                ],
+                correct: 0,
+                explanation: "Transparansi anggaran mewujudkan akuntabilitas publik, partisipasi warga dalam pengawasan, serta pencegahan penyalahgunaan anggaran."
+            }
+        ];
+
+        let currentQuestionIdx = 0;
+        let userAnswers = {};
+
+        function renderQuestion() {
+            const q = quizData[currentQuestionIdx];
+            const container = document.getElementById('quiz-container');
+
+            document.getElementById('quiz-question-number').innerText = `Soal ${currentQuestionIdx + 1} dari ${quizData.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuestionIdx + 1) / quizData.length) * 100}%`;
+
+            let badgeType = '';
+            if (q.type === 'pg') badgeType = 'Pilihan Ganda';
+            else if (q.type === 'bs') badgeType = 'Benar / Salah';
+            else if (q.type === 'pgk') badgeType = 'Pilihan Ganda Kompleks';
+            else if (q.type === 'drag') badgeType = 'Urutkan Langkah';
+
+            let html = `
+                <div class="mb-4">
+                    <span class="text-[10px] font-black bg-naker-100 text-naker-800 px-3 py-1 rounded-md border border-naker-200 uppercase tracking-wider">${badgeType}</span>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mt-2.5 leading-relaxed">${q.question}</h3>
+                </div>
+            `;
+
+            if (q.type === 'pg' || q.type === 'bs') {
+                html += `<div class="space-y-2 mb-4">`;
+                q.options.forEach((opt, idx) => {
+                    const isSelected = userAnswers[q.id] === idx;
+                    const selectedClass = isSelected ? 'border-naker-500 bg-naker-50 font-bold ring-2 ring-naker-300' : 'border-slate-200 hover:border-naker-300 bg-white';
+                    html += `
+                        <button onclick="selectSingleAnswer(${q.id}, ${idx})" class="w-full text-left p-3.5 rounded-xl border transition-all text-xs sm:text-sm flex items-center justify-between ${selectedClass}">
+                            <span>${opt}</span>
+                            <span class="w-5 h-5 rounded-full border flex items-center justify-center text-xs ${isSelected ? 'border-naker-600 bg-naker-600 text-white' : 'border-slate-300'}">${isSelected ? '✓' : ''}</span>
+                        </button>
+                    `;
+                });
+                html += `</div>`;
+            } else if (q.type === 'pgk') {
+                const currentSelections = userAnswers[q.id] || [];
+                html += `<div class="space-y-2 mb-4">`;
+                q.options.forEach((opt, idx) => {
+                    const isChecked = currentSelections.includes(idx);
+                    const selectedClass = isChecked ? 'border-naker-500 bg-naker-50 font-bold ring-2 ring-naker-300' : 'border-slate-200 hover:border-naker-300 bg-white';
+                    html += `
+                        <button onclick="toggleMultipleAnswer(${q.id}, ${idx})" class="w-full text-left p-3.5 rounded-xl border transition-all text-xs sm:text-sm flex items-center justify-between ${selectedClass}">
+                            <span>${opt}</span>
+                            <span class="w-5 h-5 rounded border flex items-center justify-center text-xs ${isChecked ? 'border-naker-600 bg-naker-600 text-white' : 'border-slate-300'}">${isChecked ? '✓' : ''}</span>
+                        </button>
+                    `;
+                });
+                html += `</div>`;
+            } else if (q.type === 'drag') {
+                const currentOrder = userAnswers[q.id] || q.items.map((_, i) => i);
+                html += `<p class="text-xs text-slate-500 mb-2">Gunakan tombol panah untuk menyusun urutan langkah secara logis:</p>`;
+                html += `<div id="drag-q-container" class="space-y-2 mb-4">`;
+                currentOrder.forEach((itemIdx) => {
+                    html += `
+                        <div class="drag-q-item bg-naker-50/50 p-3 rounded-xl border border-naker-200 flex items-center justify-between text-xs sm:text-sm" data-idx="${itemIdx}">
+                            <span class="font-medium text-slate-800">${q.items[itemIdx]}</span>
+                            <div class="flex gap-1">
+                                <button onclick="moveQuizOrder(${q.id}, ${itemIdx}, -1)" class="px-2.5 py-1 bg-naker-200 hover:bg-naker-300 rounded-lg font-bold text-naker-900">▲</button>
+                                <button onclick="moveQuizOrder(${q.id}, ${itemIdx}, 1)" class="px-2.5 py-1 bg-naker-200 hover:bg-naker-300 rounded-lg font-bold text-naker-900">▼</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+
+            if (userAnswers[q.id] !== undefined) {
+                const isCorrect = checkAnswerCorrectness(q);
+                const feedbackBg = isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-rose-50 border-rose-300 text-rose-900';
+                html += `
+                    <div class="p-4 rounded-xl border ${feedbackBg} text-xs sm:text-sm leading-relaxed transition-all">
+                        <div class="font-bold mb-1 flex items-center gap-1.5">
+                            ${isCorrect ? '✅ Umpan Balik: JAWABAN TEPAT!' : '❌ Umpan Balik: KURANG TEPAT'}
+                        </div>
+                        <p class="mt-1"><strong>Penjelasan Konseptual:</strong> ${q.explanation}</p>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+
+            document.getElementById('btn-prev-q').disabled = currentQuestionIdx === 0;
+            document.getElementById('btn-next-q').innerText = currentQuestionIdx === quizData.length - 1 ? 'Selesai & Lihat Dashboard 🎉' : 'Soal Berikutnya →';
+
+            updateScoreHeader();
+        }
+
+        function selectSingleAnswer(qId, optionIdx) {
+            userAnswers[qId] = optionIdx;
+            const q = quizData.find(item => item.id === qId);
+            if (optionIdx === q.correct) {
+                setMascotState('happy', 'Luar biasa! Pemahaman materi APBN dan APBD kamu sangat tepat.');
+            } else {
+                setMascotState('sad', 'Jawaban kurang tepat. Cermati penjelasan konseptualnya.');
+            }
+            renderQuestion();
+        }
+
+        function toggleMultipleAnswer(qId, optionIdx) {
+            let current = userAnswers[qId] || [];
+            if (current.includes(optionIdx)) {
+                current = current.filter(i => i !== optionIdx);
+            } else {
+                current.push(optionIdx);
+            }
+            userAnswers[qId] = current;
+            renderQuestion();
+        }
+
+        function moveQuizOrder(qId, itemIdx, direction) {
+            const q = quizData.find(item => item.id === qId);
+            let currentOrder = userAnswers[qId] || q.items.map((_, i) => i);
+            const pos = currentOrder.indexOf(itemIdx);
+            if (direction === -1 && pos > 0) {
+                const temp = currentOrder[pos];
+                currentOrder[pos] = currentOrder[pos - 1];
+                currentOrder[pos - 1] = temp;
+            } else if (direction === 1 && pos < currentOrder.length - 1) {
+                const temp = currentOrder[pos];
+                currentOrder[pos] = currentOrder[pos + 1];
+                currentOrder[pos + 1] = temp;
+            }
+            userAnswers[qId] = currentOrder;
+            renderQuestion();
+        }
+
+        function checkAnswerCorrectness(q) {
+            const userAns = userAnswers[q.id];
+            if (userAns === undefined) return false;
+
+            if (q.type === 'pg' || q.type === 'bs') {
+                return userAns === q.correct;
+            } else if (q.type === 'pgk') {
+                if (!Array.isArray(userAns)) return false;
+                const sortedUser = [...userAns].sort().join(',');
+                const sortedCorrect = [...q.correct].sort().join(',');
+                return sortedUser === sortedCorrect;
+            } else if (q.type === 'drag') {
+                return JSON.stringify(userAns) === JSON.stringify(q.correctOrder);
+            }
+            return false;
+        }
+
+        function updateScoreHeader() {
+            let total = 0;
+            quizData.forEach(q => {
+                if (checkAnswerCorrectness(q)) total += 10;
+            });
+            document.getElementById('current-score-display').innerText = total;
+            return total;
+        }
+
+        function navigateQuiz(dir) {
+            if (dir === 1 && currentQuestionIdx < quizData.length - 1) {
+                currentQuestionIdx++;
+                renderQuestion();
+            } else if (dir === -1 && currentQuestionIdx > 0) {
+                currentQuestionIdx--;
+                renderQuestion();
+            } else if (dir === 1 && currentQuestionIdx === quizData.length - 1) {
+                switchTab('tahap4');
+            }
+        }
+
+        function calculateFinalDashboard() {
+            let score = 0;
+            let correct = 0;
+            let wrong = 0;
+
+            let typeCounts = {
+                pg: { correct: 0, total: 4 },
+                pgk: { correct: 0, total: 2 },
+                bs: { correct: 0, total: 3 },
+                drag: { correct: 0, total: 1 }
+            };
+
+            quizData.forEach(q => {
+                const isCorrect = checkAnswerCorrectness(q);
+                if (isCorrect) {
+                    score += 10;
+                    correct++;
+                    if (typeCounts[q.type]) typeCounts[q.type].correct++;
+                } else {
+                    wrong++;
+                }
+            });
+
+            document.getElementById('final-score').innerText = score;
+            document.getElementById('correct-count').innerText = `${correct} Soal`;
+            document.getElementById('wrong-count').innerText = `${wrong} Soal`;
+
+            document.getElementById('type-pg').innerText = `${typeCounts.pg.correct} / ${typeCounts.pg.total}`;
+            document.getElementById('type-pgk').innerText = `${typeCounts.pgk.correct} / ${typeCounts.pgk.total}`;
+            document.getElementById('type-bs').innerText = `${typeCounts.bs.correct} / ${typeCounts.bs.total}`;
+            document.getElementById('type-drag').innerText = `${typeCounts.drag.correct} / ${typeCounts.drag.total}`;
+
+            const reflectiveBox = document.getElementById('reflective-box');
+            reflectiveBox.className = "p-5 rounded-2xl text-xs sm:text-sm text-left leading-relaxed mb-6 border shadow-sm ";
+
+            if (score >= 80) {
+                reflectiveBox.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
+                reflectiveBox.innerHTML = `
+                    <h4 class="font-bold text-base mb-1">🌟 Pakar Keuangan Negara & Fiskal!</h4>
+                    <p>Selamat! Anda telah menguasai struktur APBN, APBD, kebijakan fiskal, dan perpajakan secara luar biasa.</p>
+                `;
+                setMascotState('happy', 'Skor kamu luar biasa! Kamu siap menjadi analis anggaran profesional!');
+                triggerConfetti();
+                playSound('finish');
+            } else if (score >= 60) {
+                reflectiveBox.classList.add('bg-naker-50', 'border-naker-300', 'text-naker-900');
+                reflectiveBox.innerHTML = `
+                    <h4 class="font-bold text-base mb-1">👍 Pemahaman Baik</h4>
+                    <p>Capaian Anda sudah baik. Disarankan untuk memperdalam lagi materi pos pendapatan dan transfer ke daerah dalam APBN.</p>
+                `;
+                setMascotState('happy', 'Hasil yang bagus! Mari pertajam pemahaman materimu.');
+            } else {
+                reflectiveBox.classList.add('bg-amber-50', 'border-amber-300', 'text-amber-900');
+                reflectiveBox.innerHTML = `
+                    <h4 class="font-bold text-base mb-1">📚 Perlu Penguatan Materi</h4>
+                    <p>Jangan berkecil hati! Pelajari kembali penjelasan materi di Tahap 2 tentang APBN/APBD dan fungsi pajak, lalu ulangi evaluasi ini.</p>
+                `;
+                setMascotState('thinking', 'Yuk pelajari kembali materi Tahap 2 agar pemahamanmu makin mantap!');
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIdx = 0;
+            userAnswers = {};
+            switchTab('tahap1');
+            setMascotState('happy', 'Mari kita mulai eksplorasi materi APBN & APBD kembali!');
+        }
+
+        function triggerConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#38bdf8', '#0284c7', '#0369a1', '#10b981', '#f59e0b'];
+
+            for (let i = 0; i < 120; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: Math.random() * 3 + 2,
+                    speedX: Math.random() * 2 - 1,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            let timer = 0;
+
+            function render() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.y += p.speedY;
+                    p.x += p.speedX;
+                    p.rotation += 2.5;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+
+                timer++;
+                if (timer < 200) {
+                    requestAnimationFrame(render);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+
+            render();
+        }
+
+        window.onload = function() {
+            renderQuestion();
+        };
+    </script>
+</body>
+</html>
